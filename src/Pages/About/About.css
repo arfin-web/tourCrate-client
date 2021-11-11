@@ -1,0 +1,13 @@
+.about-container {
+    height: 80vh;
+    background-image: url('https://cdn.wallpapersafari.com/16/22/PMdmUG.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about-title {
+    font-size: 65px;
+}
