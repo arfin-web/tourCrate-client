@@ -8,6 +8,39 @@ const Orders = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
+
+    const handleStatus = (id) => {
+        const proceed = window.confirm('Shipped this product ?')
+        if (proceed) {
+            const url = `http://localhost:5000/allorders/${id}`;
+            fetch(url, {
+                method: "PUT",
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount > 0) {
+                        alert('successfully Shipped')
+                    };
+                })
+        }
+    }
+
+    const handleDelete = (id) => {
+        const proceed = window.confirm('Do you want to delete this product ?')
+        if (proceed) {
+            const url = `http://localhost:5000/allorders/${id}`;
+            fetch(url, {
+                method: "DELETE",
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        const remainingProduct = orders.filter(product => product._id !== id)
+                        setOrders(remainingProduct);
+                    };
+                })
+        }
+    }
     return (
         <>
             <div className="container mb-5">
@@ -21,8 +54,10 @@ const Orders = () => {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <p className="card-title fs-3">{order.name}</p>
-                                    <p className="card-text fs-4">Price: {order.price}</p>
-                                    <button className="btn btn-primary bg-gradient">Delete</button>
+                                    <p className="card-text fs-4">Price: $ <span className="text-primary">{order.price}</span></p>
+                                    <p className="card-text fs-6">Status:  <span className="text-success">{order.status}</span></p>
+                                    <button onClick={() => handleStatus(order._id)} className="btn btn-outline-primary me-2">Shipped</button>
+                                    <button onClick={() => handleDelete(order._id)} className="btn btn-primary bg-gradient">Delete</button>
                                 </div>
                             </div>
                         </div>

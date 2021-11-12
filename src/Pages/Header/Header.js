@@ -45,18 +45,24 @@ const Header = () => {
                                             {
                                                 admin && <>
                                                     <li className="list-group-item">
-                                                        <NavLink className="nav-link" to="/makeadmin">Make Admin</NavLink>
+                                                        <NavLink className="nav-link" to="/makeadmin"><i className="fas fa-user-shield fs-5"></i> Make Admin</NavLink>
                                                     </li>
                                                     <li className="list-group-item">
-                                                        <NavLink className="nav-link" to="/addproduct">Add Product</NavLink>
+                                                        <NavLink className="nav-link" to="/addproduct"><i className="fas fa-plus-circle fs-5"></i> Add Product</NavLink>
                                                     </li>
                                                     <li className="list-group-item">
-                                                        <NavLink className="nav-link" to="/orders">All Orders</NavLink>
+                                                        <NavLink className="nav-link" to="/manageproduct"><i className="fas fa-tasks fs-5"></i> Manage Product</NavLink>
+                                                    </li>
+                                                    <li className="list-group-item">
+                                                        <NavLink className="nav-link" to="/orders"><i className="fas fa-dumpster fs-5"></i> All Orders</NavLink>
                                                     </li>
                                                 </>
                                             }
                                             <li className="list-group-item">
-                                                <NavLink className="nav-link" to="/myorders">My Orders</NavLink>
+                                                <NavLink className="nav-link" to="/myorders"><i className="fas fa-dumpster-fire fs-5"></i> My Orders</NavLink>
+                                            </li>
+                                            <li className="list-group-item">
+                                                <NavLink className="nav-link" to="/makereviews"><i className="fas fa-marker fs-5"></i> Give Review</NavLink>
                                             </li>
                                         </ul>
                                     </div>

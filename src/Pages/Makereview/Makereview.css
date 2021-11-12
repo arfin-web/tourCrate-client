@@ -1,0 +1,7 @@
+.makereview-container {
+    height: 80vh;
+    background-image: url('https://www.tonysuits.com/wp-content/uploads/2018/07/review-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

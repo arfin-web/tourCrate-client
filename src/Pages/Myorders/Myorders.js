@@ -11,6 +11,22 @@ const Myorders = () => {
             .then(res => res.json())
             .then(data => setMyOrders(data))
     }, [])
+    const handleDelete = (id) => {
+        const proceed = window.confirm('Do you want to delete this product ?')
+        if (proceed) {
+            const url = `http://localhost:5000/allorders/${id}`;
+            fetch(url, {
+                method: "DELETE",
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        const remainingProduct = myOrders.filter(product => product._id !== id)
+                        setMyOrders(remainingProduct);
+                    };
+                })
+        }
+    }
     return (
         <>
             <div className="container mb-5">
@@ -24,8 +40,8 @@ const Myorders = () => {
                             <div className="col-md-8">
                                 <div className="card-body">
                                     <p className="card-title fs-3">{order.name}</p>
-                                    <p className="card-text fs-4">Price: {order.price}</p>
-                                    <button className="btn btn-primary bg-gradient">Delete</button>
+                                    <p className="card-text fs-4">Price: $ {order.price}</p>
+                                    <button onClick={() => handleDelete(order._id)} className="btn btn-primary bg-gradient">Cancel</button>
                                 </div>
                             </div>
                         </div>

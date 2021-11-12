@@ -15,6 +15,9 @@ import Myorders from './Pages/Myorders/Myorders';
 import Makeadmin from './Pages/Makeadmin/Makeadmin';
 import Privateroute from './Privateroute/Privateroute';
 import Adminroute from './Adminroute/Adminroute';
+import Makereview from './Pages/Makereview/Makereview';
+import Footer from './Pages/Footer/Footer';
+import Manageproduct from './Pages/Manageproduct/Manageproduct';
 
 function App() {
   return (
@@ -50,16 +53,23 @@ function App() {
             <Privateroute path="/myorders">
               <Myorders></Myorders>
             </Privateroute>
+            <Privateroute path="/makereviews">
+              <Makereview></Makereview>
+            </Privateroute>
             <Adminroute path="/makeadmin">
               <Makeadmin></Makeadmin>
             </Adminroute>
             <Adminroute path="/addproduct">
               <Addproduct></Addproduct>
             </Adminroute>
+            <Adminroute path="/manageproduct">
+              <Manageproduct></Manageproduct>
+            </Adminroute>
             <Adminroute path="/orders">
               <Orders></Orders>
             </Adminroute>
           </Switch>
+          <Footer></Footer>
         </BrowserRouter>
       </Authprovider>
     </>
