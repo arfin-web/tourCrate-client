@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# Welcome To Kid's Gallary
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Visit Our Website](https://kids-gallary.web.app/).
 
-## Available Scripts
+## Main Features
 
-In the project directory, you can run:
+### Awesome UI Design
+### Better user Experience
+### Attractive animation added
+### admin panel added
+### Fully Responsive
 
 ### `npm start`
 
