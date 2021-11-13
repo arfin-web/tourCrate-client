@@ -31,38 +31,41 @@ const Header = () => {
                                 </button>
 
                                 <div className="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                                    <div className="offcanvas-header">
-                                        <p className="offcanvas-title fs-2" id="offcanvasExampleLabel">Dashboard</p>
+                                    <div className="offcanvas-header overflow-hidden">
+                                        <p className="offcanvas-title fs-4" id="offcanvasExampleLabel">Dashboard</p>
                                         <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
                                     <div className="card">
-                                        <img src={user?.photoURL} className="card-img-top img-fluid img-thumbnail w-50" alt="..." />
-                                        <div className="card-body">
-                                            <p className="card-title fs-3 text-dark">{user?.displayName}</p>
+                                        <img src={user?.photoURL} className="card-img-top img-fluid img-thumbnail rounded-circle w-50" alt="profile" />
+                                        <div className="card-body overflow-hidden">
+                                            <p className="card-title fs-4 text-dark">{user?.displayName}</p>
                                             <p className="card-text">{user?.email}</p>
                                         </div>
                                         <ul className="list-group list-group-flush">
                                             {
                                                 admin && <>
-                                                    <li className="list-group-item">
+                                                    <li className="list-group-item overflow-hidden">
                                                         <NavLink className="nav-link" to="/makeadmin"><i className="fas fa-user-shield fs-5"></i> Make Admin</NavLink>
                                                     </li>
-                                                    <li className="list-group-item">
+                                                    <li className="list-group-item overflow-hidden">
                                                         <NavLink className="nav-link" to="/addproduct"><i className="fas fa-plus-circle fs-5"></i> Add Product</NavLink>
                                                     </li>
-                                                    <li className="list-group-item">
+                                                    <li className="list-group-item overflow-hidden">
                                                         <NavLink className="nav-link" to="/manageproduct"><i className="fas fa-tasks fs-5"></i> Manage Product</NavLink>
                                                     </li>
-                                                    <li className="list-group-item">
+                                                    <li className="list-group-item overflow-hidden">
                                                         <NavLink className="nav-link" to="/orders"><i className="fas fa-dumpster fs-5"></i> All Orders</NavLink>
                                                     </li>
                                                 </>
                                             }
-                                            <li className="list-group-item">
+                                            <li className="list-group-item overflow-hidden">
                                                 <NavLink className="nav-link" to="/myorders"><i className="fas fa-dumpster-fire fs-5"></i> My Orders</NavLink>
                                             </li>
-                                            <li className="list-group-item">
+                                            <li className="list-group-item overflow-hidden">
                                                 <NavLink className="nav-link" to="/makereviews"><i className="fas fa-marker fs-5"></i> Give Review</NavLink>
+                                            </li>
+                                            <li className="list-group-item overflow-hidden">
+                                                <NavLink className="nav-link" to="/pay"><i className="fab fa-cc-amazon-pay fs-5"></i> Payment</NavLink>
                                             </li>
                                         </ul>
                                     </div>

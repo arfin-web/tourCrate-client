@@ -12,10 +12,10 @@ const useFirebase = () => {
     const history = useHistory();
 
     const [user, setUser] = useState();
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState();
     const [password, setPassword] = useState('');
     const [error, setError] = useState();
+    const [loading, setLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
 
     const auth = getAuth();
@@ -28,22 +28,25 @@ const useFirebase = () => {
             setError('Password should be at least 6 character');
             return;
         };
-        createUserWithEmailAndPassword(auth, name, email, password)
+        setLoading(true)
+        createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                saveUser(user.email, user.name);
+                saveUser(user.email);
                 setError('');
                 alert('Registration Complete');
                 history.push('/signin');
             })
             .catch(error => {
                 setError(error.message);
-            });
+            })
+            .finally(() => setLoading(false));
     }
 
     const handleLogin = (e) => {
         e.preventDefault();
+        setLoading(true)
         signInWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 setUser(result.user)
@@ -54,7 +57,8 @@ const useFirebase = () => {
             })
             .catch(error => {
                 setError(error.message);
-            });
+            })
+            .finally(() => setLoading(false));
     }
 
     const signInWithGoogle = () => {
@@ -72,9 +76,11 @@ const useFirebase = () => {
     }
 
     const logOut = () => {
+        setLoading(true)
         signOut(auth).then(() => {
             setUser('');
-        });
+        })
+            .finally(() => setLoading(false));
     }
 
     useEffect(() => {
@@ -82,6 +88,7 @@ const useFirebase = () => {
             if (user) {
                 setUser(user);
             }
+            setLoading(false)
         });
     }, []);
 
@@ -98,7 +105,7 @@ const useFirebase = () => {
     }
 
     useEffect(() => {
-        const url = `http://localhost:5000/users/${user?.email}`;
+        const url = `https://calm-fjord-73469.herokuapp.com/users/${user?.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setAdmin(data.admin))
@@ -107,11 +114,11 @@ const useFirebase = () => {
     return {
         user,
         admin,
+        loading,
         handleRegistration,
         handleLogin,
         signInWithGoogle,
         logOut,
-        setName,
         setEmail,
         setPassword,
         error

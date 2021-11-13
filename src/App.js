@@ -18,6 +18,8 @@ import Adminroute from './Adminroute/Adminroute';
 import Makereview from './Pages/Makereview/Makereview';
 import Footer from './Pages/Footer/Footer';
 import Manageproduct from './Pages/Manageproduct/Manageproduct';
+import Notfound from './Pages/Notfound/Notfound';
+import Pay from './Pages/Pay/Pay';
 
 function App() {
   return (
@@ -56,6 +58,9 @@ function App() {
             <Privateroute path="/makereviews">
               <Makereview></Makereview>
             </Privateroute>
+            <Privateroute path="/pay">
+              <Pay></Pay>
+            </Privateroute>
             <Adminroute path="/makeadmin">
               <Makeadmin></Makeadmin>
             </Adminroute>
@@ -68,6 +73,9 @@ function App() {
             <Adminroute path="/orders">
               <Orders></Orders>
             </Adminroute>
+            <Route path="*">
+              <Notfound></Notfound>
+            </Route>
           </Switch>
           <Footer></Footer>
         </BrowserRouter>

@@ -16,7 +16,7 @@ const Addproduct = () => {
         const newProduct = { name, description, price, image };
 
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://calm-fjord-73469.herokuapp.com/products', {
             method: "POST",
             headers: {
                 "content-type": "application/json"

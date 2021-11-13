@@ -17,7 +17,7 @@ const Makereview = () => {
 
         const myReview = { name, email, review };
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://calm-fjord-73469.herokuapp.com/reviews', {
             method: "POST",
             headers: {
                 'content-type': "application/json"
@@ -39,7 +39,7 @@ const Makereview = () => {
                 <div className="card mb-3 border-0 rounded-3 shadow">
                     <div className="row g-0">
                         <div className="col-md-4">
-                            <img src={makereviewimg} className="img-fluid rounded-start h-100" alt="..." />
+                            <img src={makereviewimg} className="img-fluid rounded-start h-100" alt="review" />
                         </div>
                         <div className="col-md-8">
                             <form onSubmit={handleForm}>
@@ -52,7 +52,7 @@ const Makereview = () => {
                                         <input ref={emailRef} type="email" value={user?.email} className="form-control" id="formGroupExampleInput" placeholder="Enter your email" />
                                     </div>
                                     <div className="mb-3">
-                                        <textarea ref={reviewRef} class="form-control" placeholder="Please give your valuable review" id="floatingTextarea"></textarea>
+                                        <textarea ref={reviewRef} className="form-control" placeholder="Please give your valuable review" id="floatingTextarea"></textarea>
                                     </div>
                                     <div className="mb-3">
                                         <input type="submit" className="btn btn-primary bg-gradient" value="Submit" />

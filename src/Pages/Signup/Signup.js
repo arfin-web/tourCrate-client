@@ -3,11 +3,7 @@ import './Signup.css';
 import useAuth from '../../Hooks/useAuth';
 
 const Signup = () => {
-    const { handleRegistration, setName, setEmail, setPassword, error } = useAuth();
-
-    const handleName = (e) => {
-        setName(e.target.value)
-    }
+    const { handleRegistration, setEmail, setPassword, error } = useAuth();
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -23,10 +19,7 @@ const Signup = () => {
                     <p className="fs-3">Sign Up</p>
                     <form onSubmit={handleRegistration}>
                         <div className="mb-3">
-                            <input onBlur={handleName} type="text" className="form-control" id="formGroupExampleInput" placeholder="Enter your name" />
-                        </div>
-                        <div className="mb-3">
-                            <input onBlur={handleEmail} type="text" className="form-control" id="formGroupExampleInput" placeholder="Enter your email" />
+                            <input onBlur={handleEmail} type="email" className="form-control" id="formGroupExampleInput" placeholder="Enter your email" />
                         </div>
                         <div className="mb-3">
                             <input onBlur={handlePassword} type="password" className="form-control" id="formGroupExampleInput2" placeholder="Enter your password" />

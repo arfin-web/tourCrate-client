@@ -3,7 +3,12 @@ import { Redirect, Route } from 'react-router-dom';
 import useAuth from '../Hooks/useAuth';
 
 const Adminroute = ({ children, ...rest }) => {
-    const { user, admin } = useAuth();
+    const { user, loading, admin } = useAuth();
+    if (loading) {
+        return <div className="spinner-border text-primary" role="status">
+            <span className="visually-hidden">Loading...</span>
+        </div>
+    }
     return (
         <Route
             {...rest}

@@ -6,7 +6,7 @@ const Myorders = () => {
     const [myOrders, setMyOrders] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:5000/myorders?email=${user.email}`;
+        const url = `https://calm-fjord-73469.herokuapp.com/myorders?email=${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setMyOrders(data))
@@ -14,7 +14,7 @@ const Myorders = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Do you want to delete this product ?')
         if (proceed) {
-            const url = `http://localhost:5000/allorders/${id}`;
+            const url = `https://calm-fjord-73469.herokuapp.com/allorders/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

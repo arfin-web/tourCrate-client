@@ -20,7 +20,7 @@ const Contact = () => {
                                     <input type="email" value={user?.email} className="form-control" id="formGroupExampleInput" placeholder="Enter your email" />
                                 </div>
                                 <div className="mb-3">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="floatingTextarea"></textarea>
+                                    <textarea className="form-control" placeholder="Leave a message here" id="floatingTextarea"></textarea>
                                 </div>
                                 <div className="mb-3">
                                     <button type="button" className="btn btn-primary bg-gradient">Send</button>
@@ -28,7 +28,7 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className="col-md-4">
-                            <img src={contactimg} className="img-fluid rounded-start h-100" alt="..." />
+                            <img src={contactimg} className="img-fluid rounded-start h-100" alt="contact" />
                         </div>
                     </div>
                 </div>

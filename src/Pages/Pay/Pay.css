@@ -1,0 +1,10 @@
+.pay-container {
+    height: 100vh;
+    background-image: url('https://t4.ftcdn.net/jpg/03/17/47/97/360_F_317479799_fMZdfR27iBjpxOtW1g5af9eIrQdQ92Zf.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

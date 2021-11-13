@@ -1,14 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const Purchase = () => {
+    const history = useHistory();
     const [productInfo, setProductInfo] = useState({})
     const { user } = useAuth();
     const { id } = useParams();
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`;
+        const url = `https://calm-fjord-73469.herokuapp.com/products/${id}`;
 
         fetch(url)
             .then(res => res.json())
@@ -36,7 +37,7 @@ const Purchase = () => {
 
         const myOrders = { name, description, image, price, userName, email, userPhone, status };
 
-        fetch('http://localhost:5000/myorders', {
+        fetch('https://calm-fjord-73469.herokuapp.com/myorders', {
             method: "POST",
             headers: {
                 'content-type': "application/json"
@@ -47,6 +48,7 @@ const Purchase = () => {
             .then(data => {
                 if (data.insertedId) {
                     alert('Product added');
+                    history.push('/pay')
                 }
             })
         e.preventDefault();

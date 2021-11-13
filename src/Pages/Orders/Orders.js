@@ -4,7 +4,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/allorders')
+        fetch('https://calm-fjord-73469.herokuapp.com/allorders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
@@ -12,7 +12,7 @@ const Orders = () => {
     const handleStatus = (id) => {
         const proceed = window.confirm('Shipped this product ?')
         if (proceed) {
-            const url = `http://localhost:5000/allorders/${id}`;
+            const url = `https://calm-fjord-73469.herokuapp.com/allorders/${id}`;
             fetch(url, {
                 method: "PUT",
             })
@@ -28,7 +28,7 @@ const Orders = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Do you want to delete this product ?')
         if (proceed) {
-            const url = `http://localhost:5000/allorders/${id}`;
+            const url = `https://calm-fjord-73469.herokuapp.com/allorders/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

@@ -11,7 +11,7 @@ const About = () => {
             <div className="container mb-5">
                 <div className="row">
                     <div className="col-lg-6 col-md-6 col-12 p-4">
-                        <img src={aboutimg} class="img-fluid shadow-lg" alt="about" />
+                        <img src={aboutimg} className="img-fluid shadow-lg" alt="about" />
                     </div>
                     <div className="col-lg-6 col-md-6 col-12 p-4">
                         <p className="fs-1 text-primary mb-5">About Our Company</p>
