@@ -19,10 +19,10 @@ const Signin = () => {
                     <p className="fs-3">Sign In</p>
                     <form onSubmit={handleLogin}>
                         <div className="mb-3">
-                            <input onBlur={handleEmail} type="email" className="form-control" id="formGroupExampleInput" placeholder="Enter your email" />
+                            <input onBlur={handleEmail} type="email" className="form-control" id="formGroupExampleInput" placeholder="Enter your email" autoComplete="off" required />
                         </div>
                         <div className="mb-3">
-                            <input onBlur={handlePassword} type="password" className="form-control" id="formGroupExampleInput2" placeholder="Enter your password" />
+                            <input onBlur={handlePassword} type="password" className="form-control" id="formGroupExampleInput2" placeholder="Enter your password" autoComplete="off" required />
                         </div>
                         <div className="mb-3">
                             <p className="text-danger">{error}</p>

@@ -29,7 +29,7 @@ const Makeadmin = () => {
             <div className="container p-5">
                 <p className="fs-3">Make Admin</p>
                 <form onSubmit={handleRole}>
-                    <input onBlur={handleBlur} className="form-control mb-3" type="email" placeholder="enter email" />
+                    <input onBlur={handleBlur} className="form-control mb-3" type="email" placeholder="enter email" autoComplete="off" required />
                     <input type="submit" className="btn btn-primary bg-gradient" value="Make Admin" />
                 </form>
             </div>

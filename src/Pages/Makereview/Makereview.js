@@ -46,13 +46,13 @@ const Makereview = () => {
                                 <div className="card-body">
                                     <p className="fs-3">Give Your Review</p>
                                     <div className="mb-3">
-                                        <input ref={nameRef} type="text" value={user?.displayName} className="form-control" id="formGroupExampleInput" placeholder="Enter your name" />
+                                        <input ref={nameRef} type="text" value={user?.displayName} className="form-control" id="formGroupExampleInput" placeholder="Enter your name" autoComplete="off" required />
                                     </div>
                                     <div className="mb-3">
-                                        <input ref={emailRef} type="email" value={user?.email} className="form-control" id="formGroupExampleInput" placeholder="Enter your email" />
+                                        <input ref={emailRef} type="email" value={user?.email} className="form-control" id="formGroupExampleInput" placeholder="Enter your email" autoComplete="off" required />
                                     </div>
                                     <div className="mb-3">
-                                        <textarea ref={reviewRef} className="form-control" placeholder="Please give your valuable review" id="floatingTextarea"></textarea>
+                                        <textarea ref={reviewRef} className="form-control" placeholder="Please give your valuable review" id="floatingTextarea" required></textarea>
                                     </div>
                                     <div className="mb-3">
                                         <input type="submit" className="btn btn-primary bg-gradient" value="Submit" />
