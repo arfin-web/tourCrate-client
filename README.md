@@ -4,6 +4,7 @@ This project was bootstrapped with [Visit Our Website](https://kids-gallary.web.
 
 ## Main Features
 
+### Integrated Firebase Authentication System
 ### Awesome UI Design
 ### Better user Experience
 ### Attractive animation added
